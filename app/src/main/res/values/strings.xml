@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">FakeGpsXposedModule</string>
+
+  <string name="xposed_desc">Gps模拟</string>
+</resources>
