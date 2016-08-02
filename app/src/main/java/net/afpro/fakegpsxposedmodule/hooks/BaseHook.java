@@ -2,11 +2,13 @@ package net.afpro.fakegpsxposedmodule.hooks;
 
 import android.util.Log;
 
+import net.afpro.fakegpsxposedmodule.IEntry;
+
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
-public class BaseHook extends XC_MethodHook {
+public class BaseHook extends XC_MethodHook implements IEntry {
   public static final String TAG = "BaseHook";
 
   private final String target;
@@ -20,7 +22,8 @@ public class BaseHook extends XC_MethodHook {
     return true;
   }
 
-  public final void hookOn(XC_LoadPackage.LoadPackageParam loadPackageParam) {
+  @Override
+  public void enter(XC_LoadPackage.LoadPackageParam loadPackageParam) {
     if (shouldHook(loadPackageParam)) {
       loading.set(loadPackageParam);
       try {

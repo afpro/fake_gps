@@ -1,6 +1,7 @@
 package net.afpro.fakegpsxposedmodule.hooks;
 
 import android.os.Build;
+import android.telephony.TelephonyManager;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
@@ -47,6 +48,7 @@ public class TelephonyManagerHook extends BaseHook {
   }
 
   private void before_getSimCountryIso(MethodHookParam param) throws Throwable {
+    param.setResult("");
   }
 
   private void before_getNetworkCountryIso(MethodHookParam param) throws Throwable {
@@ -59,6 +61,7 @@ public class TelephonyManagerHook extends BaseHook {
   }
 
   private void before_getCellLocation(MethodHookParam param) throws Throwable {
+    param.setResult(null);
   }
 
   private void before_getNetworkType(MethodHookParam param) throws Throwable {
@@ -71,11 +74,13 @@ public class TelephonyManagerHook extends BaseHook {
   }
 
   private void before_getSimState(MethodHookParam param) throws Throwable {
+    param.setResult(TelephonyManager.SIM_STATE_ABSENT);
   }
 
   private void before_getDataState(MethodHookParam param) throws Throwable {
   }
 
   private void before_getPhoneCount(MethodHookParam param) throws Throwable {
+    param.setResult(1);
   }
 }

@@ -13,6 +13,6 @@ public class CellInfoHook extends BaseHook {
   }
 
   private void before_isRegistered(MethodHookParam param) throws Throwable {
-
+    param.setResult(false);
   }
 }

@@ -18,22 +18,26 @@ public class LocationHook extends BaseHook {
   }
 
   private void before_getLatitude(MethodHookParam param) throws Throwable {
-    param.setResult(30.0);
+    param.setResult(40.75773);
   }
 
   private void before_getLongitude(MethodHookParam param) throws Throwable {
-    param.setResult(30.0);
+    param.setResult(-73.985708);
   }
 
   private void before_getSpeed(MethodHookParam param) throws Throwable {
+    param.setResult(0f);
   }
 
   private void before_getAccuracy(MethodHookParam param) throws Throwable {
+    param.setResult(100f);
   }
 
   private void before_getBearing(MethodHookParam param) throws Throwable {
+    param.setResult(0.0f);
   }
 
   private void before_getAltitude(MethodHookParam param) throws Throwable {
+    param.setResult(0.0);
   }
 }
