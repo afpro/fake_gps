@@ -1,4 +1,4 @@
-package net.afpro.fakegpsxposedmodule;
+package hack.LocationProtector;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 

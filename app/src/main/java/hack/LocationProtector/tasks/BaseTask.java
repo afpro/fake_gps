@@ -1,6 +1,6 @@
-package net.afpro.fakegpsxposedmodule.tasks;
+package hack.LocationProtector.tasks;
 
-import net.afpro.fakegpsxposedmodule.IEntry;
+import hack.LocationProtector.IEntry;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 

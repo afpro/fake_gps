@@ -1,4 +1,4 @@
-package net.afpro.fakegpsxposedmodule.tasks;
+package hack.LocationProtector.tasks;
 
 import android.graphics.Bitmap;
 import android.util.Log;

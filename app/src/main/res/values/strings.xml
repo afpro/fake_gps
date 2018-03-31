@@ -1,5 +1,4 @@
 <resources>
-  <string name="app_name">FakeGpsXposedModule</string>
-
-  <string name="xposed_desc">Gps模拟</string>
+  <string name="app_name">LocationProtector</string>
+  <string name="xposed_desc">地理位置隐私保护</string>
 </resources>

@@ -1,10 +1,10 @@
-package net.afpro.fakegpsxposedmodule.hooks;
+package hack.LocationProtector;
 
+import android.text.TextUtils;
 import android.util.Log;
 
-import net.afpro.fakegpsxposedmodule.IEntry;
-
 import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
@@ -18,8 +18,12 @@ public class BaseHook extends XC_MethodHook implements IEntry {
     this.target = target;
   }
 
+  public BaseHook(Class<?> target) {
+    this(target.getName());
+  }
+
   protected boolean shouldHook(XC_LoadPackage.LoadPackageParam loadPackageParam) {
-    return true;
+    return !TextUtils.equals(loadPackageParam.packageName, BuildConfig.APPLICATION_ID);
   }
 
   @Override
@@ -70,5 +74,9 @@ public class BaseHook extends XC_MethodHook implements IEntry {
         target, loading.get().classLoader,
         method,
         buf);
+  }
+
+  protected void hookAll(String method) {
+    XposedBridge.hookAllMethods(targetType(), method, this);
   }
 }
